@@ -4,19 +4,24 @@ This is a simple experiment designed to showcase the differences in code complex
 
 The demo is currently incomplete but as of the time being...
 
-## Bundle size for static Hello World (not gzipped):
+## Bundle size for Hello World (not gzipped):
 
 1. Preact (tiny - just over 8kB)
 2. Vue (about 64kB)
 3. React (about 125 kB)
 
+## Bundle size for Todo List (not gzipped):
+1. Preact (15 kB)
+2. Vue (probably - not yet tested)
+3. React (131 kB)
+
 As your codebase increases in size and you add external modules, these three numbers will get much closer together and order may even change. Preact will probably always beat React though. If you need to port pre-existing React to Preact, use `preact/compat`
 
-## Performance is untested; according to TodoMVC benchmark, something like:
+## Performance, according to preliminary tests of these example apps and the TodoMVC benchmark, something like:
 
 1. Preact
 2. Vue (close to Preact)
-3. React (far behind)
+3. React (behind)
 
 Keep in mind that bundle size is way more important for time to interactive (script execution is nearly negligible in comparison to download time), so raw performance isn't that big of a deal.
 
@@ -25,7 +30,7 @@ Keep in mind that bundle size is way more important for time to interactive (scr
 1. Vue (well-written tutorial and simple structure - familiar for those who have never used a UI framework or library or have only used Angular)
 2. Preact and React (a bit more time and experience needed)
 
-Preact and React have virtually identical APIs, but there are some differences, e.g. `className` for React vs `class` for Preact.
+Preact and React have virtually identical APIs, but there are some differences, e.g. `className` for React vs `class` for Preact, and a synthetic event system for React vs DOM-based for Preact. If `preact/compat` doesn't work, you still shouldn't have a hard time porting a React codebase.
 
 ## Other considerations
 

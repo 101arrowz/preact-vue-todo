@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  font-size: 1.5em;
+  width: 1em;
+  border-radius: 50%;
+}
+.list-item:not(:hover) .button {
+  visibility: hidden;
+}
+.button:hover {
+  background-color: rgba(0,0,0,0.2)
+}
+.list-item {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  padding: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  align-items: center;
+  background-color: #673ab8;
+  color: #ffffff;
+  border-radius: 4px;
+}
