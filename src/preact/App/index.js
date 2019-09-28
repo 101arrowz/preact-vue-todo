@@ -10,10 +10,11 @@ const App = () => {
   };
   return (
     <div style={{display: 'flex', flexDirection: 'column', margin: '0 auto', alignItems: 'center'}}>
+      <div style={{fontSize: '200%'}}>Preact Todo</div>
       <TodoList data={data} setData={data => setData(data, false)} style={{width: '50vw'}} />
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '1vh'}}>
         <input ref={inputRef} onKeyPress={e => {if (e.charCode === 13) updateData()}} style={{textAlign: 'center'}} />
-        <div onClick={updateData} class="button" style={{marginTop: '5%'}}>+</div>
+        <div onClick={updateData} class="button" style={{marginTop: '1vh'}}>+</div>
       </div>
     </div>);
 }
