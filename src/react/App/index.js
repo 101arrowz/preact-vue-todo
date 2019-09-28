@@ -5,8 +5,11 @@ const App = () => {
   let [data, setData] = useWebStorage('react-todo', []);
   let inputRef = useRef(null);
   const updateData = () => {
-    setData(data.concat({header: inputRef.current.value, subheader: 'Example Subheader', id: Math.max(...(data.map(el => el.id)), -1)+1}), false);
-    inputRef.current.value = '';
+    const header = inputRef.current.value;
+    if (header) {
+      setData(data.concat({header: inputRef.current.value, subheader: 'Example Subheader', id: Math.max(...(data.map(el => el.id)), -1)+1}), false);
+      inputRef.current.value = '';
+    }
   };
   return (
     <div style={{display: 'flex', flexDirection: 'column', margin: '0 auto', alignItems: 'center' }}>
