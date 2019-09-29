@@ -4,8 +4,9 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   font-size: 1.5em;
-  width: 1em;
+  width: 1.15em;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .list-item:not(:hover) .button {
   visibility: hidden;

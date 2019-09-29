@@ -16,7 +16,7 @@ const App = () => {
       <div style={{fontSize: '200%'}}>React Todo</div>
       <TodoList data={data} setData={data => setData(data, false)} style={{width: '50vw'}} />
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '1vh'}}>
-        <input ref={inputRef} onKeyPress={e => {if (e.charCode === 13) updateData()}} style={{textAlign: 'center'}} />
+        <input ref={inputRef} onKeyPress={e => {if (e.charCode === 13) updateData()}} style={{textAlign: 'center', width: '25vw'}} />
         <div onClick={updateData} className="button" style={{marginTop: '1vh'}}>+</div>
       </div>
     </div>);

@@ -3,7 +3,7 @@
     <div :style="{fontSize: '200%'}">Vue Todo</div>
     <TodoList :contents="todoListData" :style="{width: '50vw'}" @updateData="synchronizeData"></TodoList>
     <div :style="{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '1vh'}">
-      <input ref="todoListInput" @keypress.passive="$event.charCode === 13 ? addElement() : null" :style="{textAlign: 'center'}" />
+      <input ref="todoListInput" @keypress.passive="$event.charCode === 13 ? addElement() : null" :style="{textAlign: 'center', width: '25vw'}" />
       <div @click.passive="updateData" class="button" :style="{marginTop: '1vh'}">+</div>
     </div>
   </div>
@@ -44,8 +44,9 @@ export default {
   -moz-user-select: none;
   -webkit-user-select: none;
   font-size: 1.5em;
-  width: 1em;
+  width: 1.15em;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .list-item:not(:hover) .button {
   visibility: hidden;
