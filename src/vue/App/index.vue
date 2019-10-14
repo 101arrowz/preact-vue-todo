@@ -4,7 +4,7 @@
     <TodoList :contents="todoListData" :style="{width: '50vw'}" @updateData="synchronizeData"></TodoList>
     <div :style="{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '1vh'}">
       <input ref="todoListInput" @keypress.passive="$event.charCode === 13 ? addElement() : null" :style="{textAlign: 'center', width: '25vw'}" />
-      <div @click.passive="updateData" class="button" :style="{marginTop: '1vh'}">+</div>
+      <div @click.passive="addElement" class="button" :style="{marginTop: '1vh'}">+</div>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
       const header = input.value;
       if (header) {
         input.value = '';
-        this.synchronizeData(todoListData.concat({header, subheader: 'Example Subheader', id: Math.max(...(todoListData.map(el => el.id)), -1)+1}));
+        this.synchronizeData(todoListData.concat({header, subheader: 'Example Subheader', id: Math.random().toString(36).substring(2, 15)}));
       }
     },
     synchronizeData(newData) {

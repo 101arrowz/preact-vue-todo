@@ -7,7 +7,7 @@ const App = () => {
   const updateData = () => {
     const header = inputRef.current.value;
     if (header) {
-      setData(data.concat({header, subheader: 'Example Subheader', id: Math.max(...(data.map(el => el.id)), -1)+1}), false);
+      setData(data.concat({header, subheader: 'Example Subheader', id: Math.random().toString(36).substring(2, 15)}), false);
       inputRef.current.value = '';
     }
   };
